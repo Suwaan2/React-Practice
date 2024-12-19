@@ -9,12 +9,12 @@ function InputBox({
   currencyOptions = [],
   selectCurrency = "usd",
   currencyDisable = false,
-  amountDiable = false,
+  amountDisable = false,
   className = "",
 }){
   const amountInputId = useId()
   return (
-    <div className={`bg-white p-3 rounded-lg text-sm flex ${className} `}>
+    <div className={`bg-white p-3 rounded-lg text-sm flex text-black ${className} `}>
       <div className="w-1/2">
         <label htmlFor={amountInputId} className="text-black/40 mb-2 inline-block">{label}</label>
         <input
@@ -22,7 +22,7 @@ function InputBox({
           className="outline-none w-full bg-transparent py-1.5"
           type="number"
           placeholder="Amount"
-          disabled={amountDiable}//checking if amount is disabled
+          disabled={amountDisable}//checking if amount is disabled
           value={amount}//Taking the value from the amount props
           onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))}
         />
