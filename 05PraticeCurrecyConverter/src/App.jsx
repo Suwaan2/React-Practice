@@ -36,7 +36,8 @@ function App() {
             }}
           >
             <div className="w-full mb-1">
-              <InputBox label="From" />
+              <InputBox label="From"
+              AmountDisable />
             </div>
             <div className="relative w-full h-0.5">
               <button
