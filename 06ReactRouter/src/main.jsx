@@ -2,10 +2,17 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import Layout from './Layout'
+import { Home,Github,AboutUs, ContactUs, User } from './components'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
+    <Route path='/' element={<Layout/>}> 
+    <Route path='' element={<Home/>} />
+    <Route path='contact' element={<ContactUs/>} />
+    <Route path='about' element={<AboutUs/>} />
+    <Route path='user/:userid' element={<User/>} />
+    <Route path='github' element={<Github/>} />
       
     </Route>
   )
