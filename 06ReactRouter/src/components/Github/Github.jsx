@@ -18,7 +18,7 @@ function Github() {
       Github Followers: {data.followers}
       <img src={data.avatar_url} alt="github img"  width={300} height={300}/>
       User Blog: {data.blog}
-    </div>
+          </div>
   )
 }
 
