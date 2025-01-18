@@ -6,7 +6,8 @@ const UserContextProvider = ({children}) =>{
     const [user, setUser] = useState(null)
     return(
         <UserContext.Provider value={{user, setUser}}>
-        {children}// j aaya pani as it is pass garnhi
+        {children}
+        {/* // j aaya pani as it is pass garnhi */}
         </UserContext.Provider>
     )
 
