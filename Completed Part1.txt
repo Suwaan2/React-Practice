@@ -1,0 +1,10 @@
+Completed part 1 of the react of the chai aur code with 13 practice sets
+
+in this we learnt about 
+Easy projects of the react
+1. Background Changer
+2. Password Generator
+3. Currency Exchange App
+4. React Router
+5. Context API
+6. Context API (Theme Changer)
