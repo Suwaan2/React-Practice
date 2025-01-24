@@ -1,14 +1,41 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import { TodoProvider } from "./context/index";
 
 function App() {
- 
+  const [todos, setTodos] = useState([])
+
+  const addTodo = (todo) =>{
+    setTodos((prev) => [{id: Date.now(), ...todo}, ...prev] )
+    localStorage.setItem(todos)
+  }
+  const deleteTodo = (id)=>{
+    setTodos((prev) => prev.filter((todo)=> todo.id !== id))
+  }
+  const updateTodo = (id, todo)=>{
+    setTodos((prev)=>
+       prev.map((prevTodo) =>(prevTodo.id === id ? todo : prevTodo)))
+
+  }
+  const toggleTodo = ()=>{
+
+  }
 
   return (
-  <>
-  <h1 className='bg-black text-4xl text-white'>TODO LIST with Context API</h1>
-  </>
-  )
+    <TodoProvider value={{addTodo,deleteTodo,updateTodo,toggleTodo}}>
+      <div className="bg-[#172842] min-h-screen py-8">
+        <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
+          <h1 className="text-2xl font-bold text-center mb-8 mt-2">
+            Manage Your Todos
+          </h1>
+          <div className="mb-4">{/* Todo form goes here */}</div>
+          <div className="flex flex-wrap gap-y-3">
+            {/*Loop and Add TodoItem here */}
+          </div>
+        </div>
+      </div>
+    </TodoProvider>
+  );
 }
 
-export default App
+export default App;
