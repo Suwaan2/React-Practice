@@ -17,8 +17,8 @@ function App() {
        prev.map((prevTodo) =>(prevTodo.id === id ? todo : prevTodo)))
 
   }
-  const toggleTodo = ()=>{
-
+  const toggleTodo = (id)=>{
+    setTodos((prev) => prev.map((prevTodo) => prevTodo === id ? {...prevTodo, completed: !prevTodo.completed} : prevTodo )) 
   }
 
   return (
