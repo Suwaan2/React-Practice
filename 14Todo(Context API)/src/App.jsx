@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { TodoProvider } from "./context/index";
+import TodoForm from "./components/TodoForm";
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -40,7 +41,7 @@ function App() {
             Manage Your Todos
           </h1>
           <div className="mb-4">
-            {/* Todo form goes here */}
+           <TodoForm/ >
             </div>
           <div className="flex flex-wrap gap-y-3">
             {/*Loop and Add TodoItem here */}
